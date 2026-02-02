@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANU Quest - High Fidelity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="margin: 0; font-size: 1.5rem; letter-spacing: -1px;">HANU Quest</h1>
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="user-menu-container">
+                <div class="user-badge" id="userBadge">
+                    <i class="fa-solid fa-user-graduate"></i> FIT Guy • Level 12
+                    <i class="fa-solid fa-chevron-down" style="font-size: 0.6rem; margin-left: 5px;"></i>
+                </div>
+                
+                <div class="user-dropdown" id="userDropdown">
+                    <a href="#"><i class="fa-solid fa-circle-user"></i> Hồ sơ cá nhân</a>
+                    <a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 5px 0;">
+                    <a href="#" style="color: var(--hanu-red);"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="filter-scroll">
+            <button class="filter-btn active" data-target="all">🔥 Tất cả</button>
+            <button class="filter-btn" data-target="NhaC">🏫 Nhà C</button>
+            <button class="filter-btn" data-target="NhaB">🏫 Nhà B</button>
+            <button class="filter-btn" data-target="Library">📚 Thư viện</button>
+            <button class="filter-btn" data-target="Stadium">⚽ Sân vận động</button>
+        </div>
+
+        <div class="feed" id="questFeed">
+            <div class="quest-card" data-location="NhaC">
+                <div class="location-label"><i class="fa-solid fa-location-dot"></i> Tầng 9 Nhà C</div>
+                <div class="quest-title">Ôn thi cuối kỳ ITA 1</div>
+                <div class="quest-footer">
+                    <span class="member-count">👥 2/5 đang chờ</span>
+                    <button style="border:none; background:none; color:var(--hanu-blue); font-weight:700;">THAM GIA</button>
+                </div>
+            </div>
+
+            <div class="quest-card" data-location="Stadium">
+                <div class="location-label"><i class="fa-solid fa-location-dot"></i> Sân vận động</div>
+                <div class="quest-title">Giao lưu bóng đá 5-5</div>
+                <div class="quest-footer">
+                    <span class="member-count">👥 8/10 đang chờ</span>
+                    <button style="border:none; background:none; color:var(--hanu-blue); font-weight:700;">THAM GIA</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="fab" id="btnOpen"><i class="fa-solid fa-plus"></i></button>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="quest-form">
+            <h2 style="margin-top:0">Bắt đầu Quest mới</h2>
+            <label>Chủ đề trò chuyện</label>
+            <input type="text" id="topicIn" placeholder="Bạn muốn rủ mọi người làm gì?">
+            
+            <label>Địa điểm</label>
+            <select id="locIn">
+                <option value="NhaC">Nhà C</option>
+                <option value="NhaB">Nhà B</option>
+                <option value="Library">Thư viện</option>
+                <option value="Stadium">Sân vận động</option>
+            </select>
+
+            <button class="btn-post" id="btnPost">ĐĂNG NHIỆM VỤ</button>
+            <button id="btnClose" style="width:100%; background:none; border:none; margin-top:15px; color:#999;">Để sau</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

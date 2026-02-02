@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+        </header>
+
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Add a task..." required autofocus>
+            <input type="text" id="dateText" placeholder="Due (yyyy-mm-dd)" pattern="\d{4}-\d{2}-\d{2}">
+            <input type="date" id="datePicker">
+            <button type="submit" class="add">Add</button>
+        </form>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANU Connect - MidFi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div style="font-size: 1.2rem; font-weight: bold;">HANU Quest</div>
+            <div style="font-size: 0.8rem; opacity: 0.8;">Khám phá các hội nhóm đang mở</div>
+        </header>
+
+        <div class="filter-scroll">
+            <button class="filter-btn active" data-target="all">Tất cả</button>
+            <button class="filter-btn" data-target="NhaC">Nhà C</button>
+            <button class="filter-btn" data-target="NhaB">Nhà B</button>
+            <button class="filter-btn" data-target="Library">Thư viện</button>
+            <button class="filter-btn" data-target="Stadium">Sân vận động</button>
+        </div>
+
+        <div class="feed" id="questFeed">
+            <div class="quest-card" data-location="NhaC">
+                <span class="tag-location">Tầng 9 - Nhà C</span>
+                <div class="quest-title">☕ Cafe & Ôn thi ITA</div>
+                <div class="quest-meta">Đang có: 3 người • Cần thêm: 2</div>
+            </div>
+
+            <div class="quest-card" data-location="NhaC">
+                <span class="tag-location">Tầng 5 - Nhà C</span>
+                <div class="quest-title">💻 Code Java cùng nhau</div>
+                <div class="quest-meta">Đang có: 2 người • Cần thêm: 1</div>
+            </div>
+
+            <div class="quest-card" data-location="Stadium">
+                <span class="tag-location">Sân vận động</span>
+                <div class="quest-title">⚽ Tìm kèo đá bóng 5-5</div>
+                <div class="quest-meta">Đang có: 8 người • Cần thêm: 2</div>
+            </div>
+
+            <div class="quest-card" data-location="Library">
+                <span class="tag-location">Thư viện - Tầng 2</span>
+                <div class="quest-title">📚 Đọc sách & Nghiên cứu</div>
+                <div class="quest-meta">Đang có: 1 người • Cần thêm: 3</div>
+            </div>
+
+            <div class="quest-card" data-location="NhaB">
+                <span class="tag-location">Nhà B - Sảnh B1</span>
+                <div class="quest-title">🎸 Tập văn nghệ CLB</div>
+                <div class="quest-meta">Đang có: 5 người • Cần thêm: 5</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="fab" id="btnOpenModal">+</button>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="quest-form">
+            <h3>🚀 Tạo Quest Mới</h3>
+
+            <div class="input-group">
+                <label>Bạn muốn làm gì?</label>
+                <input type="text" id="topicInput" placeholder="Ví dụ: Ôn thi HSK 4, Tìm team LOL...">
+            </div>
+
+            <div class="input-group">
+                <label>Địa điểm tại HANU</label>
+                <select id="locationInput">
+                    <option value="NhaC">Nhà C (Tầng 9/Tầng 8)</option>
+                    <option value="NhaB">Nhà B</option>
+                    <option value="Library">Thư viện</option>
+                    <option value="Stadium">Sân vận động</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Số người hiện tại/tối đa</label>
+                <input type="text" id="memberInput" placeholder="Ví dụ: 1/3">
+            </div>
+
+            <button class="btn-submit" id="btnPostQuest">Đăng Quest ngay</button>
+            <button id="btnCloseModal"
+                style="width:100%; background:none; border:none; margin-top:10px; color:#999; cursor:pointer;">Hủy
+                bỏ</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

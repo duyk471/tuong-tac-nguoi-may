@@ -1,0 +1,111 @@
+:root {
+    --hanu-blue: #005696;
+    --hanu-red: #EE3124;
+    --gray: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background: var(--gray);
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--hanu-blue);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge {
+    background: var(--hanu-red);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Mission Section */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.mission-box {
+    background: var(--hanu-blue);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-box h2 {
+    margin-top: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+/* Evolution Links */
+.evolution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.evolution-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.evolution-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--hanu-blue);
+}
+
+.evolution-card h3 {
+    color: var(--hanu-blue);
+    margin-top: 0;
+}
+
+.evolution-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.step-label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--hanu-red);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button class="toggle-btn" onclick="toggleDevice()">Switch to Mobile View</button>
+
+    <div id="app-container" class="device-container">
+        <header>
+            <h1 style="margin:0; font-size: 24px;">FinFlow</h1>
+            <nav class="nav-links">
+                <span>Dashboard</span>
+                <span>Savings</span>
+                <span>Settings</span>
+            </nav>
+            <div class="user-avatar" style="width:35px; height:35px; background:#ddd; border-radius:50%;"></div>
+        </header>
+
+        <main class="dashboard-grid">
+            <section>
+                <div class="card balance-card">
+                    <p style="opacity: 0.8; margin: 0;">Total Balance</p>
+                    <h2 style="font-size: 32px; margin: 10px 0;">$12,450.00</h2>
+                    <span class="undo-btn" onclick="alert('Action undone!')">Undo last transfer</span>
+                </div>
+
+                <div class="card smart-insight">
+                    <span class="smart-tag">Smart Insight</span>
+                    <h3>Lower your electric bill?</h3>
+                    <p>I noticed your utility bill is 20% higher than last month. Would you like me to analyze your usage patterns?</p>
+                    <button style="background: var(--smart-glow); color:white; border:none; padding:8px 15px; border-radius:5px;">Optimize Now</button>
+                </div>
+            </section>
+
+            <aside>
+                <div class="card">
+                    <div class="achievement-badge">
+                        <span>🏆</span>
+                        <span>Saving Streak: 15 Days</span>
+                    </div>
+                    <p style="font-size: 14px; color: #64748b;">You're in the top 5% of savers this month! Keep it up, Hero!</p>
+                </div>
+
+                <div class="card">
+                    <h3>Recent Tasks</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 14px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Pay Rent</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">Stock Dividends</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>Một ngày nắng đẹp trời ở Hà Nội</p>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

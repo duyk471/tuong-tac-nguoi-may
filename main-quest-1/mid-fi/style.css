@@ -1,0 +1,196 @@
+:root {
+    --hanu-blue: #005696;
+    --hanu-light-blue: #e6f0f8;
+    --text-main: #333;
+    --gray-bg: #f4f7f9;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--gray-bg);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Giả lập khung điện thoại */
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header chuyên nghiệp hơn */
+header {
+    background: var(--hanu-blue);
+    color: white;
+    padding: 20px 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.user-info {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* Khu vực Map */
+.map-section {
+    padding: 15px;
+}
+
+.map-box {
+    width: 100%;
+    height: 180px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border: 2px solid #ddd;
+}
+
+/* Tabs địa điểm */
+.filter-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 15px;
+    gap: 10px;
+    scrollbar-width: none;
+}
+
+.filter-btn {
+    background: var(--hanu-light-blue);
+    color: var(--hanu-blue);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: var(--hanu-blue);
+    color: white;
+}
+
+/* Danh sách phòng chờ */
+.feed {
+    padding: 0 15px;
+    flex-grow: 1;
+}
+
+.quest-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    transition: transform 0.2s;
+}
+
+.quest-card:active {
+    transform: scale(0.98);
+}
+
+.tag-location {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--hanu-blue);
+    font-weight: bold;
+}
+
+.quest-title {
+    font-weight: bold;
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.quest-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Navigation Bar dưới cùng */
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background: white;
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: #EE3124; /* Màu đỏ của FIT tạo điểm nhấn */
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(238, 49, 36, 0.4);
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.2s;
+}
+
+.fab:active { transform: scale(0.9); }
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none; /* Ẩn mặc định */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Form Tạo Quest */
+.quest-form {
+    background: white;
+    width: 85%;
+    max-width: 350px;
+    padding: 25px;
+    border-radius: 20px;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.quest-form h3 { margin: 0 0 15px 0; color: var(--hanu-blue); }
+
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 0.8rem; margin-bottom: 5px; color: #666; }
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    background: var(--hanu-blue);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
