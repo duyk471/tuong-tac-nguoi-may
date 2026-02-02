@@ -3,10 +3,9 @@
     --bg-basic: #f8fafc;
     --card-bg: #ffffff;
     --text-main: #1e293b;
+    --text-muted: #64748b;
     --accent-advanced: #f59e0b;
-    /* Warmth for emotion */
     --smart-glow: #8b5cf6;
-    /* Purple for intelligence */
 }
 
 body {
@@ -17,7 +16,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Container for Desktop vs Mobile Toggle */
+/* --- Layout Elements --- */
 .device-container {
     max-width: 1200px;
     margin: 20px auto;
@@ -25,22 +24,12 @@ body {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Mobile View Class */
-.mobile-view {
-    max-width: 375px;
-    border: 12px solid #333;
-    border-radius: 40px;
-    height: 667px;
-    overflow-y: auto;
-    position: relative;
-    background: white;
-}
-
-/* Floating Toggle Button */
+/* Fix: Floating Toggle Button specifically positioned bottom-right */
 .toggle-btn {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
+    top: auto; /* Reset any top positioning */
     z-index: 1000;
     padding: 12px 24px;
     background: var(--primary);
@@ -50,14 +39,72 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     font-weight: bold;
+    height: auto; /* Ensure no weird stretching */
 }
 
-/* UI Elements */
+/* Header & Logo */
 header {
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo-text {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* User Menu */
+.user-menu-container {
+    position: relative;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 10;
+    padding: 10px 0;
+    border: 1px solid #eee;
+}
+
+.dropdown-content.show { display: block; }
+
+.dropdown-content a {
+    color: var(--text-main);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover { background-color: #f8fafc; }
+
+.logout-link { color: #ef4444 !important; }
+
+/* --- Cards & Dashboard --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
 }
 
 .card {
@@ -73,12 +120,24 @@ header {
     color: white;
 }
 
-/* Smart Layer Element */
+.balance-label { opacity: 0.8; margin: 0; }
+.balance-amount { font-size: 32px; margin: 10px 0; }
+
+.trace-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+/* Smart & Advanced Elements */
 .smart-insight {
     border: 2px solid var(--smart-glow);
     background: #f5f3ff;
-    position: relative;
-    overflow: hidden;
 }
 
 .smart-tag {
@@ -90,7 +149,15 @@ header {
     text-transform: uppercase;
 }
 
-/* Advanced Layer Element */
+.smart-action-btn {
+    background: var(--smart-glow);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .achievement-badge {
     display: flex;
     align-items: center;
@@ -99,31 +166,33 @@ header {
     font-weight: 600;
 }
 
-/* Grid System */
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+.achievement-desc { font-size: 14px; color: var(--text-muted); }
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
 }
 
-.mobile-view .dashboard-grid {
-    grid-template-columns: 1fr;
+.task-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
+/* --- Mobile View Transformation (Quest 2) --- */
+.mobile-view {
+    max-width: 375px;
+    border: 12px solid #333;
+    border-radius: 40px;
+    height: 667px;
+    overflow-y: auto;
+    position: relative;
+    background: white;
+    margin: 20px auto;
 }
 
-.mobile-view .nav-links {
-    display: none;
-}
-
-.undo-btn {
-    font-size: 12px;
-    text-decoration: underline;
-    cursor: pointer;
-}
+.mobile-view .dashboard-grid { grid-template-columns: 1fr; }
+.mobile-view .nav-links { display: none; }
 
 footer {
     text-align: center;
